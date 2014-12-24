@@ -5,16 +5,16 @@
 # Configuration 
 #--------------------------------------------------------------------------------------------------------------------------------
 
-BOARD="lime2"							# lime (512Mb), lime2 (1024Mb), micro (1024Mb)
+BOARD="lime"							# lime (512Mb), lime2 (1024Mb), micro (1024Mb)
 RELEASE="wheezy"                                   		# jessie or wheezy
 BRANCH="default"						# default=3.4.x, mainline=next
-VERSION="${BOARD^} Debian 1.0 $RELEASE"               		# just name
+VERSION="${BOARD^} YunoHost 2.0 $RELEASE"               	# just name
 SOURCE_COMPILE="yes"                               		# yes / no
 KERNEL_CONFIGURE="yes"						# do you want to change my default configuration
 DEST_LANG="en_US.UTF-8"                         	 	# sl_SI.UTF-8, en_US.UTF-8
-TZDATA="Europe/Ljubljana"                         		# Timezone
+TZDATA="Europe/Paris"                         			# Timezone
 DEST=$(pwd)/output                      		      	# Destination
-ROOTPWD="1234"                               		  	# Must be changed @first login
+ROOTPWD="yunohost"                               		# Must be changed @first login
 HOST="$BOARD"						 	# Hostname
 USEALLCORES="no"						# Use all CPU cores for compiling
 SDSIZE="1000"							# SD image size in MB
@@ -39,7 +39,7 @@ if [ -d "$SRC/lib" ]; then
 	cd $SRC/lib
 	git pull 
 else
-	git clone https://github.com/igorpecovnik/lib lib
+	git clone https://github.com/Kloadut/lib lib
 fi
 cd $SRC
 
